@@ -6,7 +6,6 @@ import {
   Hash,
   FileText,
   Copy,
-  // CheckCircle, // Removed as available checkbox is removed
 } from "lucide-react";
 import { useCreateBooksMutation } from "../redux/api/baseApi";
 import type { IBook } from "../types";
@@ -27,17 +26,15 @@ const AddBook = () => {
     useCreateBooksMutation();
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
-    const { name, value } = e.target; 
-
+    const { name, value } = e.target;
 
     setForm((prev) => ({
       ...prev,
-      [name]:
-        name === "copies"
-          ? Number(value)
-          : value,
+      [name]: name === "copies" ? Number(value) : value,
     }));
   };
 
@@ -56,11 +53,11 @@ const AddBook = () => {
       <div className="overflow-hidden">
         {/* Header */}
         <div className="text-center pb-8 pt-8 px-8">
-          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-green-600 to-gray-700 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-r from-fuchsia-600 to-violet-800 rounded-full flex items-center justify-center mb-4">
             <BookOpen className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold font-primary mb-2">Add New Book</h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-700">
             Fill in the details to add a new book to your library
           </p>
         </div>
@@ -72,9 +69,9 @@ const AddBook = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="title"
-                  className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                  className="text-sm font-semibold flex items-center gap-2 text-gray-800"
                 >
-                  <BookOpen className="w-4 h-4 text-blue-500" />
+                  <BookOpen className="w-4 h-4 text-fuchsia-500" />
                   Title
                 </label>
                 <input
@@ -85,16 +82,16 @@ const AddBook = () => {
                   onChange={handleChange}
                   required
                   placeholder="Enter book title"
-                  className="w-full h-11 px-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 bg-white"
+                  className="w-full h-11 px-4 border-2 border-gray-300 rounded-lg focus:border-fuchsia-500 focus:outline-none transition-colors duration-200 bg-white"
                 />
               </div>
 
               <div className="space-y-2">
                 <label
                   htmlFor="author"
-                  className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                  className="text-sm font-semibold flex items-center gap-2 text-gray-800"
                 >
-                  <User className="w-4 h-4 text-green-500" />
+                  <User className="w-4 h-4 text-violet-500" />
                   Author
                 </label>
                 <input
@@ -105,16 +102,16 @@ const AddBook = () => {
                   onChange={handleChange}
                   required
                   placeholder="Enter author name"
-                  className="w-full h-11 px-4 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none transition-colors duration-200 bg-white"
+                  className="w-full h-11 px-4 border-2 border-gray-300 rounded-lg focus:border-violet-500 focus:outline-none transition-colors duration-200 bg-white"
                 />
               </div>
 
               <div className="space-y-2">
                 <label
                   htmlFor="genre"
-                  className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                  className="text-sm font-semibold flex items-center gap-2 text-gray-800"
                 >
-                  <Tag className="w-4 h-4 text-purple-500" />
+                  <Tag className="w-4 h-4 text-lime-500" />
                   Genre
                 </label>
                 <select
@@ -123,7 +120,7 @@ const AddBook = () => {
                   value={form.genre}
                   onChange={handleChange}
                   required
-                  className="w-full h-11 px-4 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors duration-200 bg-white"
+                  className="w-full h-11 px-4 border-2 border-gray-300 rounded-lg focus:border-lime-500 focus:outline-none transition-colors duration-200 bg-white"
                 >
                   <option value="">Select genre</option>
                   <option value="FICTION">Fiction</option>
@@ -138,9 +135,9 @@ const AddBook = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="isbn"
-                  className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                  className="text-sm font-semibold flex items-center gap-2 text-gray-800"
                 >
-                  <Hash className="w-4 h-4 text-orange-500" />
+                  <Hash className="w-4 h-4 text-pink-500" />
                   ISBN
                 </label>
                 <input
@@ -151,7 +148,7 @@ const AddBook = () => {
                   onChange={handleChange}
                   required
                   placeholder="Enter ISBN"
-                  className="w-full h-11 px-4 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none transition-colors duration-200 bg-white"
+                  className="w-full h-11 px-4 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none transition-colors duration-200 bg-white"
                 />
               </div>
             </div>
@@ -159,7 +156,7 @@ const AddBook = () => {
             <div className="space-y-2">
               <label
                 htmlFor="description"
-                className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                className="text-sm font-semibold flex items-center gap-2 text-gray-800"
               >
                 <FileText className="w-4 h-4 text-indigo-500" />
                 Description
@@ -171,7 +168,7 @@ const AddBook = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter book description"
-                className="w-full min-h-[100px] px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors duration-200 resize-none bg-white"
+                className="w-full min-h-[100px] px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors duration-200 resize-none bg-white"
               />
             </div>
 
@@ -179,7 +176,7 @@ const AddBook = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="copies"
-                  className="text-sm font-semibold flex items-center gap-2 text-gray-700"
+                  className="text-sm font-semibold flex items-center gap-2 text-gray-800"
                 >
                   <Copy className="w-4 h-4 text-teal-500" />
                   Number of Copies
@@ -192,17 +189,16 @@ const AddBook = () => {
                   min={0}
                   onChange={handleChange}
                   required
-                  className="w-full h-11 px-4 border-2 border-gray-200 rounded-lg focus:border-teal-500 focus:outline-none transition-colors duration-200 bg-white"
+                  className="w-full h-11 px-4 border-2 border-gray-300 rounded-lg focus:border-teal-500 focus:outline-none transition-colors duration-200 bg-white"
                 />
               </div>
-
             </div>
 
             <div className="pt-6">
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-green-600 to-gray-700 hover:from-green-700 hover:to-gary-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-fuchsia-600 to-violet-800 hover:from-violet-700 hover:to-fuchsia-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>
@@ -223,7 +219,10 @@ const AddBook = () => {
               )}
               {isError && (
                 <div className="text-red-600 mt-2">
-                  Failed to add book. {("data" in (error as { data?: { message?: string } }) ? (error as { data?: { message?: string } }).data?.message : "") || ""}
+                  Failed to add book.{" "}
+                  {("data" in (error as { data?: { message?: string } })
+                    ? (error as { data?: { message?: string } }).data?.message
+                    : "") || ""}
                 </div>
               )}
             </div>

@@ -35,7 +35,6 @@ const AllBooks = () => {
     }
   };
 
-
   if (isLoading) return <Loading/>
 
   if (isError) {
@@ -49,7 +48,7 @@ const AllBooks = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">All Books</h1>
       <div className="overflow-x-auto rounded shadow">
         <table className="min-w-full divide-y divide-gray-200 bg-white">
-          <thead className="bg-gray-100">
+          <thead className="bg-fuchsia-100 text-fuchsia-700">
             <tr>
               <th className="px-4 py-3 text-left text-sm font-semibold">Title</th>
               <th className="px-4 py-3 text-left text-sm font-semibold">Author</th>
@@ -63,32 +62,32 @@ const AllBooks = () => {
           <tbody className="divide-y divide-gray-100 text-sm">
             {books.length > 0 ? (
               books.map((book: IBook) => (
-                <tr key={book._id} className="hover:bg-gray-50 transition">
+                <tr key={book._id} className="hover:bg-fuchsia-50 transition">
                   <td className="px-4 py-2">{book.title}</td>
                   <td className="px-4 py-2">{book.author}</td>
                   <td className="px-4 py-2">{book.genre}</td>
                   <td className="px-4 py-2">{book.isbn}</td>
                   <td className="px-4 py-2 text-center">{book.copies}</td>
                   <td
-                    className={`px-4 py-2 text-center font-medium ${book.available && book.copies > 0
-                        ? "text-green-600"
+                    className={`px-4 py-2 text-center font-medium ${
+                      book.available && book.copies > 0
+                        ? "text-lime-600"
                         : "text-red-600"
-                      }`}
+                    }`}
                   >
                     {book.available && book.copies > 0 ? "Available" : "Unavailable"}
                   </td>
                   <td className="flex items-center justify-center">
-                    <button onClick={() => handleEdit(book._id!)} className="text- px-2 py-1 rounded text-xs hover:text-gray-500">
+                    <button onClick={() => handleEdit(book._id!)} className="text-violet-600 px-2 py-1 rounded text-xs hover:text-violet-800">
                       <Edit />
                     </button>
                     <button onClick={() => handleDelete(book._id!)} className="text-red-500 px-2 py-1 rounded hover:text-red-700">
                       <Trash2 />
                     </button>
-                    <button onClick={() => handleView(book._id!)} className="text-yellow-500 hover:text-yellow-700 px-2 py-1 rounded">
-                      
-                      <View/>
+                    <button onClick={() => handleView(book._id!)} className="text-lime-500 hover:text-lime-700 px-2 py-1 rounded">
+                      <View />
                     </button>
-                    <button onClick={() => handleBorrow(book._id!)} className="bg-green-600 text-white px-2 py-1 rounded text-xs hover:bg-blue-700">
+                    <button onClick={() => handleBorrow(book._id!)} className="bg-fuchsia-600 text-white px-2 py-1 rounded text-xs hover:bg-violet-700">
                       Borrow
                     </button>
                   </td>

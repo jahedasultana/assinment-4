@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Navbar />
       { location.pathname === "/" &&  <HeroSection/> }
-      <div className="bg-gradient-to-r from-green-600/15 to-gray-700/15">
+      <div className="bg-gradient-to-r from-violet-600/15 to-blue-700/15">
         <div className="w-90% container mx-auto px-4 md:px-4">
           <Outlet />
         </div>
