@@ -1,25 +1,27 @@
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-green-600 to-gray-700 text-white py-8">
+    <footer className="w-full bg-gradient-to-r from-violet-800 to-fuchsia-600 text-white py-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4">
         {/* Left: Logo & Name */}
         <div className="flex items-center gap-2">
           <span className="text-2xl">📚</span>
           <span className="text-lg font-semibold tracking-wide">Minimal Library Management System</span>
         </div>
+        
         {/* Center: Info */}
         <div className="text-sm opacity-90 text-center">
           <div>
             &copy; {new Date().getFullYear()} Library Management Team. All rights reserved.
           </div>
         </div>
+        
         {/* Right: Socials */}
         <div className="flex gap-4 mt-2 md:mt-0">
           <a
             href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-yellow-300 transition"
+            className="hover:text-lime-300 transition"
             aria-label="GitHub"
           >
             <svg className="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
@@ -28,7 +30,7 @@ const Footer = () => {
           </a>
           <a
             href="mailto:your@email.com"
-            className="hover:text-yellow-300 transition"
+            className="hover:text-lime-300 transition"
             aria-label="Email"
           >
             <svg className="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
@@ -39,7 +41,7 @@ const Footer = () => {
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-yellow-300 transition"
+            className="hover:text-lime-300 transition"
             aria-label="LinkedIn"
           >
             <svg className="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
